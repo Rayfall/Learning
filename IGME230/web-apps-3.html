@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web-apps-3</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Page</h1>
+    
+    <!--<h2><b>Hello-1</b></h2>
+    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <br>
+    <h3><em>Review Questions</em></h3>
+    <ol>
+        <li>What is a <i>Web App</i>?</li>
+        <p>A web app is a client–server computer program in which the client (including the user interface and
+            client-side logic) runs in a web browser</p>
+        <li>What are the 3 major components of a web browser that can be scripted/controlled by a web developer?</li>
+        <ul>
+            <li>The Web Layout Engine.</li>
+            <li>The JavaScript Engine.</li>
+            <li>The Web Browser APIs.</li>
+        </ul>
+        <li>What languages are commonly used to "program the <b>Web Layout Engine</b>?</li>
+        <ul>
+            <li>Blink - Used by Google Chrome, Edge, and Opera.</li>
+            <li>Trident - Used by Internet Explorer.</li>
+            <li>Gecko - Used by FireFox.</li>
+            <li>WebKit - Used by Safari.</li>
+        </ul>
+        <li>How are new web browser features proposed?</li>
+        <p>Mostly done by browser vendors. Sometimes new features will be tested out before being approved. If the
+            popularity of the feature catches on, then the process will start to approve new features.</p>
+        <li>Who is in charge of web standards - the standards bodies or the browser vendors?</li>
+        <p>This is an open-ended question. An argument can be made for both as vendors can make changes and add features
+            as they see fit. The standards bodies govern what are acceptible web standards.</p>
+        <li>List 3 places a web developer can find "web app" documentation.</li>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">Web Browser APIs</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a></li>
+        </ul>
+    </ol>-->
+    <h3><em>Resources</em></h3>
+    <ul>
+        <li>
+            <p>IGME-230 Web App 3 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-3.md">Web Apps 3</a>
+            </p>
+        </li>
+        <li>
+            <p>innerElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element">innerElement</a>
+            </p>
+        </li>
+        <li>
+            <p>HTMLElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+            </p>
+        </li>
+    </ul>
+    <footer>Copyright &copy; 20XX</footer>
+    <script>
+        "use strict";
+
+        console.log("DOM-1");
+        // first, get a reference to the first <h1> on the page
+        let h1 = document.querySelector("h1");
+        let footer1 = document.querySelector("footer");             //Select the footer 
+        // second, change its HTML
+        h1.innerHTML = "My <i>UFO</i> Page";
+        footer1.innerHTML = "Copyright, Me!";	                    //Challenge done with two lines of code.
+        //document.querySelector("footer").innerHTML = "Success!";  //Footer changed in one line of code.
+    </script>
+</body>
+
+</html>

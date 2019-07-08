@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web-apps-2</title>
+
+</head>
+
+<body>
+    <script>
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        "use strict";
+        console.log("Hello-2");
+        console.log("Hello world!");
+        const answer = 42;
+        // string concatenation
+        console.log("The answer to everything is " + answer);
+
+        let x = 1;
+        let y = 1;
+        let sum2 = x + y;
+        // string templating (ES6 only)
+        console.log(`${x} + ${y} is ${sum2}`);
+
+        let words = "The answer to everything is"; //Declare above statement as a variable.
+        console.log(`${words} ${answer}`);         //Use string templating instead of string concatenation on above statement.
+
+        let z = 1;                                 //Declare z as a variable and set it equal to 1.
+        let newSum = sum2 + z;                      //Add z to newSum.
+        console.log(`${z} + ${sum2} = ${newSum}`);  //Display results using string templating.
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        console.log("Hello-3");
+        // 5 fundamental JavaScript types
+        let sum3 = 99;           // Number
+        let name3 = "Fred";      //String
+        let isLoggedIn3 = false; // Boolean
+        let userName3 = undefined;
+        let data3 = null;
+
+        // We can later change what type a variable contains
+        sum3 = "Joe";        // `sum` now contains a String
+        name3 = 50;          // `name` now contains a Number
+
+        //let sum = 999;    //Introducing an error into the program.
+        //Produces "SCRIPT1052: Let/Const redeclaration"
+        console.log(sum3);   // "Joe"
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        console.log("Hello-4");
+        // 1) Common JS Objects
+        let colors = ["red", "green", "blue"]; // Array literal
+        let person = { name4: "Fred", age: 20 };   // Object literal
+        let month = new Date().getMonth();
+        let age = Math.round(20.999);
+        let age2 = Math.floor(20.999);
+
+        console.log(colors[0]);		// "red"
+        console.log(person.name4);		// "fred"
+        console.log(month);		// try this yourself
+        console.log(age);			// 21
+        console.log(age2);			// 20
+
+        // 2) Treat "primitives" like objects
+        let sum4 = 99.980809809;             // Number
+        let name4 = "Fred";                  // String
+        let isLoggedIn4 = false;             // Boolean
+        let userName4 = undefined;
+        let data4 = null;
+
+        let y4 = Number("fred");             //Created the line for y.
+
+        console.log(sum4.toFixed(2)); 	    // 99.98
+        console.log(name4.length); 		    // 4
+        console.log(isLoggedIn4.toString());// "false"
+        console.log(y4);                    //NaN
+        //-------------------------------------------------------------------------------------------------------------------------------------
+        console.log("Hello-5");
+        let a = 0;
+        let b = 1;
+        let c = 2;
+        let name5 = "Fred";
+
+        // if() statements accept a "truthy" condition
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+
+        // #1
+        if (true) {
+            console.log("true"); // true
+        } else {
+            console.log("false");
+        }
+
+        // #2
+        if (false) {
+            console.log("true");
+        } else {
+            console.log("false"); // false
+        }
+
+        // #3
+        if (2 > 1) {
+            console.log("true"); // true
+        } else {
+            console.log("false");
+        }
+
+        // #4
+        if (0) {
+            console.log("true");
+        } else {
+            console.log("false"); // false
+        }
+
+        // #5
+        if (undefined) {
+            console.log("true");
+        } else {
+            console.log("false"); // false
+        }
+
+        // #6
+        if ("fred") {
+            console.log("true"); // true
+        } else {
+            console.log("false");
+        }
+
+        // All of these are false values, excepting the last one - it turns out that "false" is true
+        console.log(0 == false ? "0 is false" : "0 is true");
+        console.log(-0 == false ? "-0 is false" : "-0 is true");
+        console.log(false == false ? "false is false" : "false is true");
+        console.log(null == false ? "null is false" : "null is true");
+        console.log(undefined == false ? "NaN is false" : "NaN is true");
+        console.log("" == false ? "\"\" is false" : "\"\" is true");
+        console.log('' == false ? "\'\' is false" : "\'\' is true");
+        console.log(new Boolean(false) == false ? "\"new Boolean(false)\" is false" : "\"new Boolean(false)\" is true");
+        console.log("false" == false ? "\"false\" is false" : "\"false\" is true");
+
+    </script>
+
+    <h2><b>Hello-1</b></h2>
+    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <br>
+    <h3><em>Review Questions</em></h3>
+    <ol>
+        <li>What is a <i>Web App</i>?</li>
+        <p>A web app is a client–server computer program in which the client (including the user interface and
+            client-side logic) runs in a web browser</p>
+        <li>What are the 3 major components of a web browser that can be scripted/controlled by a web developer?</li>
+        <ul>
+            <li>The Web Layout Engine.</li>
+            <li>The JavaScript Engine.</li>
+            <li>The Web Browser APIs.</li>
+        </ul>
+        <li>What languages are commonly used to "program the <b>Web Layout Engine</b>?</li>
+        <ul>
+            <li>Blink - Used by Google Chrome, Edge, and Opera.</li>
+            <li>Trident - Used by Internet Explorer.</li>
+            <li>Gecko - Used by FireFox.</li>
+            <li>WebKit - Used by Safari.</li>
+        </ul>
+        <li>How are new web browser features proposed?</li>
+        <p>Mostly done by browser vendors. Sometimes new features will be tested out before being approved. If the
+            popularity of the feature catches on, then the process will start to approve new features.</p>
+        <li>Who is in charge of web standards - the standards bodies or the browser vendors?</li>
+        <p>This is an open-ended question. An argument can be made for both as vendors can make changes and add features
+            as they see fit. The standards bodies govern what are acceptible web standards.</p>
+        <li>List 3 places a web developer can find "web app" documentation.</li>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">Web Browser APIs</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a></li>
+        </ul>
+    </ol>
+    <h3><em>Resources</em></h3>
+    <ul>
+        <li>
+            <p>IGME-230 Web App 1 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-1.md">Web Apps 1</a>
+            </p>
+        </li>
+    </ul>
+
+</body>
+
+</html>
+</script>
+</body>
+
+</html>

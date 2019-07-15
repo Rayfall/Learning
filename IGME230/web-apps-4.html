@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>More DOM 1</title>
+	<style>
+		body{border:1px solid gray;}
+	</style>
+</head>
+<body>
+<h1>My Page</h1>
+<h2>Info</h2>
+<p>Blah <b>Blah</b> Blah</p>
+<h2>Links</h2>
+<ul>
+	<li><a href="http://www.apple.com">Apple</a></li>
+	<li><a href="http://www.google.com">Google</a></li>
+</ul>
+
+<script>
+    "use strict";
+    console.log("More_Dom-1_Dom-2");
+    let footer1 = document.createElement("footer");
+    footer1.setAttribute("title", "Don't copy this page without my permission!");
+    let textNode = document.createTextNode("© 20XX by Andrew Grant");
+    footer1.appendChild(textNode);
+    document.body.appendChild(footer1);
+
+    //Write code that utilizes document.createElement() by putting in an hr tag at the end of the page.
+    let hr1 = document.createElement("hr");
+    document.body.appendChild(hr1);
+
+    //Above example done without creating the variable.
+    //document.body.appendChild(document.createElement("hr"));
+    //-------------------------------------------------------------------------------------------------------------------------------------
+    console.log("More_Dom-3");
+    let footer2 = document.createElement("footer");
+    footer2.title = "Don't copy this page without my permission!";
+    footer2.innerHTML = "&copy; 20XX by Andrew Grant";
+    document.body.appendChild(footer2)
+    //-------------------------------------------------------------------------------------------------------------------------------------
+    console.log("More_Dom-4");
+    let listItem = document.createElement("li");
+    listItem.innerHTML = "GeoCities";
+
+    let unorderedList = document.querySelector("ul");
+    unorderedList.appendChild(listItem);
+
+    let fbListItem = document.createElement("li");
+    let link = document.createElement("a");
+    link.innerHTML = "Facebook";
+    link.href = "http://www.facebook.com";
+    fbListItem.appendChild(link);
+
+    let googleListItem = document.querySelector("ul li a[href*='google.com']").parentNode;
+    
+
+    let amazonListItem = document.createElement("li");                //Create a new clickable link to Amazon.
+    let amazonLink = document.createElement("a");
+    amazonLink.innerHTML = "Amazon";
+    amazonLink.href = "http://www.amazon.com";
+    amazonListItem.appendChild(amazonLink);
+
+    unorderedList.insertBefore(fbListItem, googleListItem);
+    unorderedList.appendChild(amazonListItem);                        //Add to the end of the list.
+    //-------------------------------------------------------------------------------------------------------------------------------------
+    console.log("More_Dom-5");
+    let googleLink = document.querySelector("ul li a[href*='google.com']");
+    googleLink.href = "http://www.bing.com";
+    //-------------------------------------------------------------------------------------------------------------------------------------
+    console.log("More_Dom-6");
+    let appleLink = document.querySelector("ul li a[href*='apple.com']");
+    appleLink.href = "http://lowendmac.com";
+    //-------------------------------------------------------------------------------------------------------------------------------------
+    console.log("More_Dom-7");
+    document.body.removeChild(document.querySelector("p"));
+</script>
+
+<!--<h2><b>Hello-1</b></h2>
+    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <br>
+    <h3><em>Notes</em></h3>
+    <ul>
+        <li>document.getElementsByTagName() or document.getElementsById() is less powerful and less flexible than the document.querySelector() and document.querySelectorAll() methods.</li>
+        <li>document.querySelectorAll() returns an empty array when it cannot find any matching elements.</li>
+        <li>document.querySelector() returns a null when it cannot find a matching element.</li>
+    </ul>
+    <h3><em>Review Questions</em></h3>
+    <ol>
+        <li>What does "DOM" stand for?</li>
+        <li>What does the DOM API "give" us?</li>
+        <li>What does "CRUD" stand for?</li>
+        <li>What happens when we try to use JavaScript DOM methods to access the contents of a page <i>before<i> it has loaded?</li>
+        <li>What is the name of the DOM method that will return the first element that matches the given selector?</li>
+        <li>What is the name of the DOM method that will return <b>all<b> of the elements that match the given selector?</li>
+        <li>Which property is used to get and set the text and HTML contents of an HTML element?</li>
+        <li>Which property is used to get and set the CSS styles of an HTML element?</li>
+        <li>Write a line of JavaScript that sets the background-position style property of an element to the value of "top".</li>
+        <li>Give 2 ways to loop through an array.</li>
+        <li>Compare and contrast "View Source" versus the capabilities of the Web Inspector. Which method gives the developer a "live" view of the current HTML and CSS of a page?</li>
+        <li>What happens if we try to access a method or property (ex. .innerHTML) on a variable that has a null or undefined value?</li>
+        <li>How can we add breakpoints to our code in the debugger, and inspect the values of variables?</li>
+        <li>What does the debugger; statement do? (We did not talk about this one at all, so google it!)</li>
+        <li>List the 8 "falsy" values listed at the end of <a href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-2.md">2 - Introduction to JavaScript</a>. Recall that in a boolean context like this if(expression){ doSomethingIfTrue() }, if an expression does not evaluate to false, it's true!</li>
+    </ol>
+    <h3><em>Resources</em></h3>
+    <ul>
+        <li>
+            <p>IGME-230 Web App 3 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-3.md">Web Apps 3</a>
+            </p>
+        </li>
+        <li>
+            <p>innerElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element">innerElement</a>
+            </p>
+        </li>
+        <li>
+            <p>HTMLElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+            </p>
+        </li>
+        <li>
+            <p>Type Selectors - <a href="https://www.w3.org/TR/selectors-3/#type-selectors">CSS Type Selectors</a></p>
+        </li>
+    </ul>-->
+</body>
+</html>

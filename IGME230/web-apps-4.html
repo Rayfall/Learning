@@ -27,11 +27,9 @@
     let textNode = document.createTextNode("© 20XX by Andrew Grant");
     footer1.appendChild(textNode);
     document.body.appendChild(footer1);
-
     //Write code that utilizes document.createElement() by putting in an hr tag at the end of the page.
     let hr1 = document.createElement("hr");
     document.body.appendChild(hr1);
-
     //Above example done without creating the variable.
     //document.body.appendChild(document.createElement("hr"));
     //-------------------------------------------------------------------------------------------------------------------------------------
@@ -44,25 +42,20 @@
     console.log("More_Dom-4");
     let listItem = document.createElement("li");
     listItem.innerHTML = "GeoCities";
-
     let unorderedList = document.querySelector("ul");
     unorderedList.appendChild(listItem);
-
     let fbListItem = document.createElement("li");
     let link = document.createElement("a");
     link.innerHTML = "Facebook";
     link.href = "http://www.facebook.com";
     fbListItem.appendChild(link);
-
     let googleListItem = document.querySelector("ul li a[href*='google.com']").parentNode;
     
-
     let amazonListItem = document.createElement("li");                //Create a new clickable link to Amazon.
     let amazonLink = document.createElement("a");
     amazonLink.innerHTML = "Amazon";
     amazonLink.href = "http://www.amazon.com";
     amazonListItem.appendChild(amazonLink);
-
     unorderedList.insertBefore(fbListItem, googleListItem);
     unorderedList.appendChild(amazonListItem);                        //Add to the end of the list.
     //-------------------------------------------------------------------------------------------------------------------------------------
@@ -89,21 +82,18 @@
     </ul>
     <h3><em>Review Questions</em></h3>
     <ol>
-        <li>What does "DOM" stand for?</li>
-        <li>What does the DOM API "give" us?</li>
-        <li>What does "CRUD" stand for?</li>
-        <li>What happens when we try to use JavaScript DOM methods to access the contents of a page <i>before<i> it has loaded?</li>
-        <li>What is the name of the DOM method that will return the first element that matches the given selector?</li>
-        <li>What is the name of the DOM method that will return <b>all<b> of the elements that match the given selector?</li>
-        <li>Which property is used to get and set the text and HTML contents of an HTML element?</li>
-        <li>Which property is used to get and set the CSS styles of an HTML element?</li>
-        <li>Write a line of JavaScript that sets the background-position style property of an element to the value of "top".</li>
-        <li>Give 2 ways to loop through an array.</li>
-        <li>Compare and contrast "View Source" versus the capabilities of the Web Inspector. Which method gives the developer a "live" view of the current HTML and CSS of a page?</li>
-        <li>What happens if we try to access a method or property (ex. .innerHTML) on a variable that has a null or undefined value?</li>
-        <li>How can we add breakpoints to our code in the debugger, and inspect the values of variables?</li>
-        <li>What does the debugger; statement do? (We did not talk about this one at all, so google it!)</li>
-        <li>List the 8 "falsy" values listed at the end of <a href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-2.md">2 - Introduction to JavaScript</a>. Recall that in a boolean context like this if(expression){ doSomethingIfTrue() }, if an expression does not evaluate to false, it's true!</li>
+        <li>The browser DOM can be visualized as ___________________</li>
+        <li>How many <i>root</i> nodes does an HTML document (or any XML document) have?</li>
+        <li>Exactly how many <i>parent</i> elements can an element on a web page have?</li>
+        <li>What are the <i>child</i> elements of the <ul> tag in <b>more-dom-4.html</b>?</li>
+        <li>What is the <i>first-child</i> of the <ul> tag in <b>more-dom-4.html</b>?</li>
+        <li>What is the <i>last-child</i> of the <ul> tag in <b>more-dom-4.html</b>?</li>
+        <li>What is the <i>next-sibling</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
+        <li>What is the <i>previous-sibling</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
+        <li>What is the <i>first-child</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
+        <li>What is the <i>parent</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
+        <li>When is an HTML page allowed to have more than one <footer>?</li>
+        <li>Give an example of a CSS3 <i>substring matching attribute selector</i> that matches an element that has an href value that ends with (has a suffix of) .edu - to help you here's the CSS3 spec page again: <a href="https://www.w3.org/TR/css3-selectors/#attribute-selectors"></li>
     </ol>
     <h3><em>Resources</em></h3>
     <ul>

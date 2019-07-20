@@ -1,1 +1,1 @@
-README file for IGME230
+# IGME 230 Learning Home Base

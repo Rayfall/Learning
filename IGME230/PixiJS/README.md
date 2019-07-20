@@ -1,1 +1,1 @@
-#Pixi JavaScript
+# Pixi JS Learning - (IGME 230)

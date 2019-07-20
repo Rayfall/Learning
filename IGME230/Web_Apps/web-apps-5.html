@@ -111,9 +111,87 @@
         console.log(multiply3_3(2)); 	// 2, because b has a default value of 1
         //-------------------------------------------------------------------------------------------------------------------
         console.log("Functions 4");
+        // #1 - a & b here are in "script scope" because they are declared outside of a block
+        let A_4 = "A";
+        let B_4 = "B";
+
+
+        // #2 a function 
+        function func1() {
+            let A_4 = "AA"; // A scoped to this function's block masks the "script scoped" A
+            console.log(`INSIDE func1() A equals ${A_4}`); // "AA"
+            console.log(`INSIDE func1() B equals ${B_4}`); // "B" - "script scoped" b is visible
+            B_4 = "BB"; // change value of "script scoped" B
+            let C_4 = "C"; // declare a block-scoped C variable
+            debugger; // debugger breakpoint
+        }
+
+        func1(); // call func1()
+        console.log(`OUTSIDE func1() A equals ${A_4}`); // "A" - A is in scope
+
+        console.log(`OUTSIDE func1() B equals ${B_4}`); // "BB" -  B is in scope
+
+        //console.log(`OUTSIDE func1() C equals ${C}`); // reference error! C is not defined
+
+        //debugger; // debugger breakpoint
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Functions 5");
+        function doStuff_5() {
+            let x = 1;
+            let y = 1;
+            if (x == 1) {
+                x++;
+                y++;
+                let z = 1; // z is scoped to the `if()` block
+            }
+            console.log(x); // 2
+            console.log(y); // 2
+            console.log(z); // ReferenceError: z is not defined!
+        }
+
+        doStuff_5();
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Functions 6");
+        function addSquares(a, b) {
+            function square(x) {
+                return x * x;
+            }
+            return square(a) + square(b);
+        }
+
+        let a_6 = addSquares(2, 3); // returns 13
+        let b_6 = addSquares(3, 4); // returns 25
+        let c_6 = addSquares(4, 5); // returns 41
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Functions 7");
+        function addThem1(num1, num2) {
+            return num1 + num2;
+        }
+
+        // 2 - function expression
+        let addThem2 = function (num1, num2) {
+            return num1 + num2;
+        }
+
+        // 3 - arrow function with the usual "block body"
+        let addThem3 = (num1, num2) => { return num1 + num2; }
+
+        // 4 - arrow function with a "concise body" and implied return statement
+        let addThem4 = (num1, num2) => num1 + num2;
+
+        // They all do the same thing
+        console.log(addThem1(5, 5)) // 10
+        console.log(addThem2(5, 5)) // 10
+        console.log(addThem3(5, 5)) // 10
+        console.log(addThem4(5, 5)) // 10
+
+        // 5 - and here's an even more concise version, if the function has only a single argument the
+        // parentheses can be omitted
+        let doubleIt = num => num * 2;
+        console.log(doubleIt(5));
 
     </script>
-    
+
 </body>
 
 </html>

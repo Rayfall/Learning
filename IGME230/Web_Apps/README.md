@@ -1,1 +1,1 @@
-# Web Applications with JavaScript
+# Web Applications with JavaScript - (IGME 230)

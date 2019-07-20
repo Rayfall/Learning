@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>web-apps-3</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+
+        p b {
+            transform: rotate(20deg)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Page</h1>
+    <h2>Info</h2>
+    <h2>Pictures</h2>
+    <h2>More Info</h2>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+    <footer>Copyright &copy; <b>20XX</b></footer>
+    <script>
+        "use strict";
+
+        console.log("DOM-1 and DOM-2");
+        // first, get a reference to the first <h1> on the page
+        let h1 = document.querySelector("h1");
+        let footer1 = document.querySelector("footer");             //Select the footer 
+        // second, change its HTML
+        h1.innerHTML = "My <i>UFO</i> Page";
+        footer1.innerHTML = "Copyright, Me!";	                    //Challenge done with two lines of code.
+        //document.querySelector("footer").innerHTML = "Success!";  //Footer changed in one line of code.
+        //-----------------------------------------------------------------------------------------------------------------------------------
+        console.log("DOM-3");
+        // first, get a reference to the first <h1> on the page
+        let h1_3 = document.querySelector("h1");
+
+        // second, change its HTML
+        h1_3.innerHTML = "My <i>UFO</i> Page";
+
+        // 3 - get a reference to the second paragraph and change its HTML in 1 line of code
+        //document.querySelector("p:nth-of-type(2)").innerHTML = "I am 2nd paragraph!";             //Commenting out the paragraph changes effecting DOM-4.
+
+        // 4 - get a reference to the third paragraph using an id selector and change its HTML in 1 line of code
+        //document.querySelector("#lastParagraph").innerHTML = "I am the last paragraph";           //Commenting out the paragraph changes effecting DOM-4.
+
+        // 5 - get a reference to the <footer>
+        let footer3 = document.querySelector("footer");
+
+        // 6 - we can set CSS values through the .style property
+        footer3.style.color = "green";
+        footer3.style.fontFamily = "monospace";
+        footer3.style.fontSize = "2em";
+        footer3.style.border = "2px solid pink";
+        footer3.style.paddingTop = "10px";
+        footer3.style.paddingBottom = "10px";
+        footer3.style.margin = "5px";
+
+        document.querySelector("h2:nth-of-type(2)").innerHTML = "I am the second-to-last h2!";      //Add code to change the second-to-last h2.
+        //-----------------------------------------------------------------------------------------------------------------------------------
+        console.log("DOM-4");
+        let allHeadings = document.querySelectorAll("h2");
+
+        // 2 - loop through array using classic `for` loop
+        for (let i = 0; i < allHeadings.length; i++) {
+            let h2 = allHeadings[i];
+            let currentText = h2.innerHTML;
+            h2.innerHTML = "#" + (i + 1) + " - " + currentText;
+            h2.style.transform = "translateX(" + (i * 120) + "px) translateY(" + (i * 100) + "px) rotate(" +
+                (i * 20) + "deg)";
+
+            // or write the above as an ES6 template string
+            //h2.style.transform = `translateX(${i*120}px) translateY(${i*100}px) rotate(${i*20}deg)`;
+
+            h2.style.display = "inline-block"; // make sure the h2 isn't too wide, or it will rotate off the screen
+        }
+
+        // 3 - use a *descendent selector* to target the <b> tags inside of paragraphs 
+        // but not that <b> tag in the footer
+        let myList = document.querySelectorAll("p b");
+        for (let element of myList) { // use the ES6 `for...of` loop 
+            // we  set CSS values through the .style property
+            element.style.color = "red";
+            element.style.fontVariant = "small-caps";
+            element.style.fontFamily = "monospace";
+            element.style.fontSize = "1.5em";
+            element.style.border = "2px solid pink";
+            element.style.paddingTop = "5px";
+            element.style.paddingBottom = "5px";
+        }
+
+        let allParagraphBlocks = document.querySelectorAll("p b");                          //Create a selector that targets <b> tags in the <p>. Loop through them the same way as the h2.
+        for (let i = 0; i < allParagraphBlocks.length; i++) {
+            let p2 = allParagraphBlocks[i];
+            let currentText = p2.innerHTML;
+            p2.innerHTML = "#" + (i + 1) + " - " + currentText;
+            p2.style.transform = "translateX(" + (i * 120) + "px) translateY(" + (i * 100) + "px) rotate(" +
+                (i * 20) + "deg)";
+
+            // or write the above as an ES6 template string
+            //p2.style.transform = `translateX(${i*120}px) translateY(${i*100}px) rotate(${i*20}deg)`;
+
+            p2.style.display = "inline-block"; // make sure the p2 isn't too wide, or it will rotate off the screen
+        }
+
+        //Adding code that was to be typed into the browser for changes.
+
+        //document.querySelector("h1").innerHTML = "New Title!";
+        //document.body.style.backgroundColor = "red";
+        //document.querySelectorAll("p").forEach(e=>e.innerHTML = "Hi there!");
+        //-----------------------------------------------------------------------------------------------------------------------------------
+        console.log("DOM-5");
+        let element = document.querySelector("h4"); // will be null because page has no h4 elements
+        //element.innerHTML = "Found an h4 tag"; // WILL CAUSE AN ERROR
+
+        /* Safer way is to check for null first! */
+        if (element != null) {
+            element.innerHTML = "Found an h4 tag";
+        } else {
+            console.log("No h4 found");
+        }
+
+        /* Shorten up your if statements! */
+        // JavaScript has a number of "falsy" values (false, 0, undefined, null , "", '') 
+        // that evaluate to false in boolean contexts.
+        // In a boolean context, anything that is not false, is true.
+
+        // So we can replace the above with:
+        if (element) { // element will be considered true if it is not one of the falsy values
+            element.innerHTML = "Found an h4 tag";
+        } else {
+            console.log("No h4 found");
+        }
+
+    </script>
+
+    <!--<h2><b>Hello-1</b></h2>
+    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <br>
+    <h3><em>Notes</em></h3>
+    <ul>
+        <li>document.getElementsByTagName() or document.getElementsById() is less powerful and less flexible than the document.querySelector() and document.querySelectorAll() methods.</li>
+        <li>document.querySelectorAll() returns an empty array when it cannot find any matching elements.</li>
+        <li>document.querySelector() returns a null when it cannot find a matching element.</li>
+    </ul>
+    <h3><em>Review Questions</em></h3>
+    <ol>
+        <li>What does "DOM" stand for?</li>
+        <li>What does the DOM API "give" us?</li>
+        <li>What does "CRUD" stand for?</li>
+        <li>What happens when we try to use JavaScript DOM methods to access the contents of a page <i>before<i> it has loaded?</li>
+        <li>What is the name of the DOM method that will return the first element that matches the given selector?</li>
+        <li>What is the name of the DOM method that will return <b>all<b> of the elements that match the given selector?</li>
+        <li>Which property is used to get and set the text and HTML contents of an HTML element?</li>
+        <li>Which property is used to get and set the CSS styles of an HTML element?</li>
+        <li>Write a line of JavaScript that sets the background-position style property of an element to the value of "top".</li>
+        <li>Give 2 ways to loop through an array.</li>
+        <li>Compare and contrast "View Source" versus the capabilities of the Web Inspector. Which method gives the developer a "live" view of the current HTML and CSS of a page?</li>
+        <li>What happens if we try to access a method or property (ex. .innerHTML) on a variable that has a null or undefined value?</li>
+        <li>How can we add breakpoints to our code in the debugger, and inspect the values of variables?</li>
+        <li>What does the debugger; statement do? (We did not talk about this one at all, so google it!)</li>
+        <li>List the 8 "falsy" values listed at the end of <a href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-2.md">2 - Introduction to JavaScript</a>. Recall that in a boolean context like this if(expression){ doSomethingIfTrue() }, if an expression does not evaluate to false, it's true!</li>
+    </ol>-->
+    <h3><em>Resources</em></h3>
+    <ul>
+        <li>
+            <p>IGME-230 Web App 3 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-3.md">Web Apps 3</a>
+            </p>
+        </li>
+        <li>
+            <p>innerElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element">innerElement</a>
+            </p>
+        </li>
+        <li>
+            <p>HTMLElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+            </p>
+        </li>
+        <li>
+            <p>Type Selectors - <a href="https://www.w3.org/TR/selectors-3/#type-selectors">CSS Type Selectors</a></p>
+        </li>
+    </ul>
+</body>
+
+</html>

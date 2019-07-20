@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web-Apps-5: Functions</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        console.log("Functions 1");
+        // 1 - These first 2 examples do not have a return value, and instead rely on "side effects"
+        // 1A - no arguments, no return value
+        function sayHello() {
+            console.log("Hello!");
+        }
+        // 1B - String argument, no return value
+        function sayHelloTo(name) {
+            console.log("Hello " + name + "!");
+        }
+        sayHello(); 			// "Hello!"
+        sayHelloTo("Bob"); 		// "Hello Bob!"
+        let a = sayHelloTo("Mary"); 	// `a` defaults to `undefined` because this function has no return value
+        // 2 - these functions DO return values
+        // 2A - one String argument, String return value
+        function formatGreeting(name) {
+            return "Hello " + name + "!";
+        }
+        // 2B - here we store the returned value in a variable
+        let greeting1_1 = formatGreeting("Mary");
+        greeting1_1 = greeting1_1.toUpperCase();
+        console.log(greeting1_1); 	// HELLO MARY!
+
+        function greetFull(fname, lname) {
+            return "Hello " + fname + " " + lname + "!";
+        }
+
+        let greetingFull = greetFull("Thomas", "Smith");
+        console.log(greetingFull);
+        //------------------------------------------------------------------------------------------------------------------------
+        console.log("Functions 2");
+        // 1 - Function Expression
+        let formatGreeting1_2 = function (name) {
+            // we are going to use ES6 String template literals instead of concatenation going forward
+            return `Hello ${name}!`;
+        }
+
+        let formatGreeting2_2 = function (name) {
+            return `Greetings and felicitations, kind ${name}.`;
+        }
+
+        // 1A - we can still call the functions as normal
+        let greeting1_2 = formatGreeting1_2("Mary");
+        let greeting2_2 = formatGreeting2_2("Mary");
+
+        console.log(greeting1_2); 		// Hello Mary!
+        console.log(greeting2_2); 	// Greetings and felicitations, kind Mary.
+
+
+        // 2 - A function that takes another function as an argument, and then calls it
+        function createGreetings_2(myData, myFunc) {
+            let greetings = []; // empty array
+            for (let n of myData) {
+                let g = myFunc(n); // call the passed in function and pass in a name
+                //let g = myFunc.call(this,n); // does the same thing
+                greetings.push(g); // add greeting to array
+            }
+            return greetings;
+        }
+
+        let names_2 = ["Gary", "Larry", "Mary", "Sherri"];
+        // 2A - here we pass the names array, and our 1st greeting format function
+        let greetings3_2 = createGreetings_2(names_2, formatGreeting1_2);
+
+        // 2B - here we pass the names array, and our 2nd greeting format function
+        let greetings4_2 = createGreetings_2(names_2, formatGreeting2_2);
+
+        console.log(greetings3_2); // ["Hello Gary!", "Hello Larry!", "Hello Mary!", "Hello Sherri!"]
+        console.log(greetings4_2); // ["Greetings and felicitations, kind Gary.", "Greetings and felicitations, kind Larry.", "Greetings and felicitations, kind Mary.", "Greetings and felicitations, kind Sherri."]
+        //----------------------------------------------------------------------------------------------------------------
+        console.log("Functions 3");
+        // #1 - A standard JavaScript function, it does not handle missing arguments well
+        function multiply1_3(a, b) {
+            return a * b;
+        }
+
+        console.log(multiply1_3(2, 5)); // 10
+        console.log(multiply1_3(2));   // we omit the b parameter, the result is NaN (Not a Number), because b is undefined
+
+
+        // #2 - by checking the value of b before using it, we can give it a default value 
+        function multiply2_3(a, b) {
+            b = (typeof b !== 'undefined') ? b : 1; // ternary operator
+            return a * b;
+        }
+
+        console.log(multiply2_3(2, 5)); 	// 10
+        console.log(multiply2_3(2)); 	// 2, because b will default to 1
+
+
+        // #3 - this is much easier with ES6 default parameters
+        function multiply3_3(a, b = 1) {
+            return a * b;
+        }
+
+        console.log(multiply3_3(2, 5)); 	// 10
+        console.log(multiply3_3(2)); 	// 2, because b has a default value of 1
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Functions 4");
+
+    </script>
+    
+</body>
+
+</html>

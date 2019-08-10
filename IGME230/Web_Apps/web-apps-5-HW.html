@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Web Apps-5-HW</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Favorites</h1>
+    <h2>My Favorite Colors</h1>
+
+        <ol id="colorsList">
+
+        </ol>
+
+    <h2>My Favorite Foods</h1>
+
+    <ol id="foodsList">
+
+    </ol>
+
+    <h2>My Favorite Links</h1>
+
+    <ol id="linksList">
+
+    </ol>
+
+    <script>
+    "use strict";
+    // Function created with array having a default.
+    function createList(listElement, array = ["puppydogs","butterflies","lollipops"]) {
+        for (let x of array)
+        {
+            let appendItem = document.createElement("li");
+            let text = document.createTextNode(x);
+            appendItem.appendChild(text);
+            document.getElementById(listElement).appendChild(appendItem);
+        }
+    }
+    // Arrow Function used in same fashion as a regular array.
+    let createArrowList = (listElement, array) => {
+        for (let x of array)
+        {
+            let appendItem = document.createElement("li");
+            let text = document.createTextNode(x);
+            appendItem.appendChild(text);
+            document.getElementById(listElement).appendChild(appendItem);
+        }
+    }
+
+    let colors = ["red", "green", "blue", "purple", "pink", "silver", "azure"];
+    let foods = ["pizza", "mac&cheese", "pasta"];
+    let links = {
+        "RIT": "http://www.rit.edu",
+        "RWAG": "https://www.facebook.com/RWAGclub",
+        "New Media Club": "http://newmediaclub.cias.rit.edu",
+        "Nokia": "http://www.nokia.com",
+        "Microsoft": "http://www.microsoft.com"
+    }
+    
+
+    // Demonstration of function calls with the different arrays.
+    //createList("colorsList",colors);
+    //createList("foodsList",foods);
+
+    // Demonstation of arrow function calls with the different arrays.
+    createArrowList("colorsList",colors);
+    createArrowList("foodsList",foods);
+    
+
+    for (var key in links)
+    {
+        let linkAppend = document.createElement("li");
+        let value = document.createElement("a");
+        value.innerHTML = key;
+        value.href = appendItem[key];
+        appendItem.appendChild(value);
+        document.getElementById("linksList").appendChild(linkAppend);
+    }
+    </script>
+</body>
+
+</html>

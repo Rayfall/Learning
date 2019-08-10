@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps-6</title>
+	<style>
+		body{
+			font-family:sans-serif;
+		}
+		#colorform{
+			background-color:#dfecdf;
+			color: #111;
+			padding:1em;width:400px;
+		}
+		#colorform p#info{
+			background-color:white;
+			color: black;
+			width:300px;
+			height:100px;
+			padding:.5em;
+		}
+		
+		#colorform legend{ 
+			font-weight:bold;
+			font-size:1.2em;
+		}
+	</style>
+</head>
+<body>
+
+        <div id="colorform">
+            <legend>Choose your favorite color!</legend>
+            <p><input type="radio" name="colorGroup" id="colorGroup" value="red" /> Red</p>
+            <p><input type="radio" name="colorGroup" id="colorGroup" value="green" /> Green</p>
+            <p><input type="radio" name="colorGroup" id="colorGroup" value="blue" /> Blue</p>
+            <p><button id="colorButton" type="button">Submit</button></p>
+            <p id="info"></p>
+        </div>
+
+        <script>
+        "use strict";
+        //let p = document.querySelector("p");
+        
+        function changeTextListen(value) {
+            document.querySelector("#info").innerHTML = "You have selected " + "&quot" + value + "&quot" + "!";
+        }
+        let toggleText = (e) => {
+            if(e.target.value == "red"){
+                inputR.dataset.state = "changed";
+                inputG.dataset.state = "normal";
+                inputB.dataset.state = "normal";
+            }
+            else if(e.target.value == "green"){
+                inputR.dataset.state = "normal";
+                inputG.dataset.state = "changed";
+                inputB.dataset.state = "normal";
+            }
+            else{
+                inputR.dataset.state = "normal";
+                inputG.dataset.state = "normal";
+                inputB.dataset.state = "changed";
+            }
+            
+            this.changeTextListen(e.target.value);
+        }
+
+        function changeTextSubmit(value) {
+            document.querySelector("#info").innerHTML = "You FINAL CHOICE is " + "&quot" + value + "&quot" + "!";
+            document.querySelector("legend").style.color = value;
+        }
+        let submitText = (e) => {
+            if(inputR.dataset.state == "changed"){
+                e.target.value = inputR.value;
+                inputR.dataset.state = "normal";
+            }
+            else if(inputG.dataset.state == "changed"){
+                e.target.value = inputG.value;
+                inputG.dataset.state = "normal";
+            }
+            else{
+                e.target.value = inputB.value;
+                inputB.dataset.state = "normal";
+            }
+            this.changeTextSubmit(e.target.value);
+        }
+
+        let inputR = document.querySelector("p:nth-of-type(1) input");
+        let inputG = document.querySelector("p:nth-of-type(2) input");
+        let inputB = document.querySelector("p:nth-of-type(3) input");
+        
+        inputR.dataset.state = "normal";
+        inputG.dataset.state = "normal";
+        inputB.dataset.state = "normal";
+
+        inputB.addEventListener("click",toggleText);
+        inputG.addEventListener("click",toggleText);
+        inputR.addEventListener("click",toggleText);
+
+        let button = document.querySelector("p:nth-of-type(4) button").onclick = submitText;
+
+        </script>
+        <!--<h3>Hints</h3>
+            <ol>
+                <li>
+                    You can use event handlers OR event listeners, it's your choice
+                </li>
+                <li>
+                    You can use standard functions OR arrow functions, it's your choice
+                </li>
+                <li>
+                    The Submit button code should be triggered by the click event
+                </li>
+                <li>
+                    The Radio button code should be triggered by the change event
+                </li>
+                <li>
+                    document.querySelectorAll() can be used to get reference to all of the radio buttons. You can then loop through the list you get back (use a for or for...of loop).
+                </li>
+                <li>
+                    To get the value of the selected radio button, use e.target.value
+                </li>
+                <li>
+                    In the submit button code, you can check to see which radio button is selected by checking its .checked property
+                </li>
+                <li>
+                    The value of these radio buttons happens to be a CSS color keyword, so it will be pretty easy to assign the value to the color property of the <legend> element (and CSS color values are not case sensitive, so don't worry about the capitalization).
+                </li>
+            </ol>
+        -->
+</body>
+</html>

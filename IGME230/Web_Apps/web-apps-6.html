@@ -6,34 +6,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web-Apps-6: Events</title>
+    <style>
+        body{border:1px solid gray;}
+        p{font-size:2em;}
+        div{font-size:2em;font-weight:bold;}
+    </style>
 </head>
 
 <body>
 
     <script>
         "use strict";
-        console.log("Functions 1");
+        console.log("Events 1");
+        let p1 = document.querySelector("p");
+  
+        // 1 - the onclick event handler now has a function expression as its value
+        p1.onclick = function(e){
+            // 2 - the keyword 'this' in this context means the object that triggered the event
+            this.innerHTML = "I was clicked!";
+            
+        // 3 - will do the same thing
+        //e.target.innerHTML = "I was clicked!";
+        }
 
         //------------------------------------------------------------------------------------------------------------------------
-        console.log("Functions 2");
+        console.log("Events 2");
+        let p2 = document.querySelector("p");
+        p2.onclick = function(e){
+            // 1 - the keyword 'this' in this context means the object that triggered the event
+            this.innerHTML = "I was clicked!";
+        
+        // 2 - will do the same thing
+        //e.target.innerHTML = "I was clicked!";
+        }
+
+        // 3 - Let's declare a function to be called later
+        function divClicked2(){
+            this.innerHTML = "I am a div, and I was clicked!";
+        }
+
+        // 4 - .onclick now points at the divClicked() function
+        document.querySelector("div").onclick = divClicked2;
 
         //----------------------------------------------------------------------------------------------------------------
-        console.log("Functions 3");
+        console.log("Events 3");
+        function changeParagraph3(){
+            document.querySelector("p").innerHTML = "Somebody changed me!";
+        }
+
+        // 2 - Let's declare an arrow function to be called later
+        let divClicked3 = (e) => { 
+            e.target.innerHTML = "I am a div, and I was clicked!";
+            this.changeParagraph(); // `this` is the window object, not the button that was clicked
+        }
+
+        // 3 - .onclick now points at the divClicked arrow function
+        let div = document.querySelector("div").onclick = divClicked3;
 
         //-------------------------------------------------------------------------------------------------------------------
-        console.log("Functions 4");
+        console.log("Events 4");
+        let changeText4 = (e) => { e.target.innerHTML = "I was clicked!"; };
+        let changeColor4 = (e) => { e.target.style.color = "red"; };
+        let changeStyle4 = (e) => { e.target.style.fontStyle = "italic"; };
+
+
+        // 2 - get references to the <p> and the <div>
+        let p4 = document.querySelector("p");
+        let div4 = document.querySelector("div");
+
+        // 3 - use addEventListener() to add three events to the <p>
+        p4.addEventListener("click",changeText4); // NOTE the event is named 'click', NOT 'onclick'
+        p4.addEventListener("click",changeColor4);
+        p4.addEventListener("click",changeStyle4); // now three functions will be called when `p` is clicked
+
+        // 4 - we will only give the <div> two events
+        div4.addEventListener("click",changeText4);
+        div4.addEventListener("click",changeColor4);
+
+        let messWithDiv4 = (e) => { 
+			   div.removeEventListener("click",changeText4);
+			   div.removeEventListener("click",changeColor4);
+			   div.addEventListener("click",changeStyle4);
+			};
+
+        p4.addEventListener("click",messWithDiv4);
  
         //-------------------------------------------------------------------------------------------------------------------
-        console.log("Functions 5");
+        console.log("Events 5");
+        // 1 - get references to <p> and <div>
+        let p5 = document.querySelector("p"); 
+        let div5 = document.querySelector("div");
+
+        // 2 - create a custom property named "state" for each element and give it a default value
+        // all new properties will be added to the element's .dataset property
+        p5.dataset.state = "normal"; // A
+        div5.dataset.state = "normal"; // B
+
+        // 3 - Let's declare an arrow function that can be called later
+        let toggleStyle5 = (e) => { 
+                        let state = e.target.dataset.state; // C
+                        if (state == "changed"){ // == for comparison
+                            e.target.style.backgroundColor = "white";
+                            e.target.style.fontStyle = "normal";
+                            state = "normal";
+                        } else{
+                            e.target.style.backgroundColor = "yellow";
+                            e.target.style.fontStyle = "italic";
+                            state = "changed";
+                        }
+                                    
+                        e.target.dataset.state = state;
+                    };
+
+        // 4 - add events 
+        p5.addEventListener("click",toggleStyle5);
+        div5.addEventListener("click",toggleStyle5);
 
         //-------------------------------------------------------------------------------------------------------------------
         console.log("Functions 6");
+        window.onload = init; // do you understand WHY there are no parentheses after init?
 
-        //-------------------------------------------------------------------------------------------------------------------
-        console.log("Functions 7");
+        function init(){
+            // this is the second log we see in the console - do you understand WHY?
+            console.log("Page is loaded!"); 
+            document.querySelector("h1").innerHTML = "Window loaded!";
+        }
 
-
+        // this is the first log we see in the console - do you understand WHY?
+        console.log("Page is NOT loaded!"); 
     </script>
+    <p>I am a paragraph</p>
+    <div>I am a division</div>
+
 <!--<h2><b>Hello-1</b></h2>
     <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
     <br>
@@ -45,19 +149,11 @@
     </ul>
     <h3><em>Review Questions</em></h3>
     <ol>
-        <li>What "super power" does a function have that a regular JavaScript object does not?</li>
-        <li>What is the default return value of a function that does not have a return keyword?</li>
-        <li>What is a <i>block</i>?</li>
-        <li>Define <i>scope</i>?</li>
-        <li>Declaring a variable with let or const at the top level of the "script" tag (outside of any other blocks or functions) gives it what kind of <i>scope</i>?</li>
-        <li>Declaring a variable with let or const inside of a function gives it what kind of <i>scope</i>?</li>
-        <li>What is the <i>scope</i>?</li>
-        <li>What is the <i>previous-sibling</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
-        <li>What is the <i>first-child</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
-        <li>What is the <i>parent</i> of the "Google" <li> tag in <b>more-dom-4.html</b>?</li>
-        <li>When is an HTML page allowed to have more than one <footer>?</li>
-        <li>Give an example of a CSS3 <i>substring matching attribute selector</i> that matches an element that has an href value that ends with (has a suffix of) .edu - to help you here's the CSS3 spec page again: <a href="https://www.w3.org/TR/css3-selectors/#attribute-selectors"></li>
-    </ol>
+        <li>Give 2 advantages to using <i>event listeners</i> instead of <i>event handlers</i>.</li>
+        <li>Give a situation where you might use an <i>event handler</i> anyway.</li>
+        <li>What does an event handler (or event listener) "point" at?</li>
+        <li>What are the two advantages of using arrow functions?</li>
+</ol>
     <h3><em>Resources</em></h3>
     <ul>
         <li>

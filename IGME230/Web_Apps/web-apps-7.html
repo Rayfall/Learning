@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web-Apps-7: Object Literals</title>
+    <style>
+        body{border:1px solid gray;}
+        p{font-size:2em;}
+        div{font-size:2em;font-weight:bold;}
+    </style>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        console.log("Objects 1");
+        let car1 = {
+            make: "Ford",
+            model: "Pinto",
+            cylinders: 4
+        };
+
+        // 2 - Add properties to existing objects
+        car1.color = "Red"; // add properties to objects with dot syntax
+        car1["year"] = 1972; // or with brackets
+
+        // 3 -  Delete properties from an object with the delete operator
+        delete car1["color"];
+        delete car1.year;
+
+        // 4 - access property values with dot syntax, or square brackets
+        console.log(car1.make); // Ford
+        console.log(car1["model"]); // Pinto
+
+        // 5 - iterate over keys of object with for...in
+        for (let key in car1){
+        console.log(`key=${key}`); // make,model,cylinders
+        }
+
+        // 6 - here we are using the keys to get the values
+        for (let key in car1){
+        console.log(car1[key]); // Ford,Pinto,4
+        }
+
+        // 7 - Object.keys() is a recent addition, it returns an array of the keys of an object
+        console.log(Object.keys(car1)); // ["make", "model", "cylinders"]
+
+
+        // 8 - the fancy ES6 way to iterate over object properties
+        Object.keys(car1).map(key => console.log(`key=${key}  value=${car1[key]}`));
+
+        /*
+        key=make  value=Ford
+        key=model  value=Pinto
+        key=cylinders  value=4
+        */
+
+        //------------------------------------------------------------------------------------------------------------------------
+        console.log("Events 2");
+        let car2 = {
+            make: "Ford",
+            model: "Pinto",
+            cylinders: 4,
+            maxSpeed: 100,
+            speed: 10,
+            speedUp: function(howMuch){
+        // 2- we need to use "this" whenever we refer to a property of the current object
+                this.speed += howMuch; 
+                if(this.speed > this.maxSpeed){
+                    this.speed = maxSpeed;
+                }
+            },
+            stop: function(){
+                this.speed = 0;
+            }
+        };
+
+        console.log(car2.speed); // 10
+        car2.speedUp(50); 		// car1.speed is now 60
+        car2.stop(); 			// car1.speed is now 0
+
+        //----------------------------------------------------------------------------------------------------------------
+        console.log("Events 3");
+        // 1 - create two functions that we will later use as a "method"
+        let speedUp = function(howMuch){
+                this.speed += howMuch; 
+                if(this.speed > this.maxSpeed){
+                    this.speed = maxSpeed;
+                }
+        }
+
+        let stop = function(){ this.speed = 0; }
+
+
+        // 2 - Here is our "factory" function
+        function makeCar(make,model,cylinders=4,speed=10, maxSpeed=100, isJunked=false){
+            let car = {
+                make: make,
+                model: model,
+                cylinders: cylinders,
+                speed: speed,
+                maxSpeed: maxSpeed,
+                speedUp: speedUp,
+                stop: stop
+            };
+            
+            // 3 - seal it so that no new properties may be added
+            Object.seal(car);
+            return car;
+        }
+
+        // 4 - make some cars and log them to the console
+        let car13 = makeCar("Toyota","Corolla");
+        console.log(car13);
+
+        let car23 = makeCar("Toyota","Camry",6);
+        car2.stop();
+        console.log(car23);
+
+        let car33 = makeCar("Toyota","Tundra",8,50,200);
+        car3.speedUp(100);
+        console.log(car33);
+
+
+        // 5 - add the cars to an array
+        console.log("----- now loop through cars -----");
+        let cars = [car13,car23,car33];
+        for (car of cars){
+            car.speedUp(10);
+            console.log(car);	
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Events 4");
+        // NEW ES6 Object Literal Feature
+
+        // 1- property value "shortcuts"
+
+        // 1A - old way
+        function makeCar1(make,model,cylinders){
+            return {
+                make: make,
+                model: model,
+                cylinders: cylinders
+            };
+        }
+
+        // 1B - new ES6 way works as long as the property name and value use the same identifier
+        function makeCar2(make,model,cylinders){
+            return {
+                make,
+                model,
+                cylinders
+            };
+        }
+
+        console.log(makeCar1("Subaru","Brat",4));
+        console.log(makeCar2("Plymouth","Champ",4));
+
+        // 2 - new and more concise way to specify object methods
+        // 2A - old way
+        let car1 = {
+            speed: 0,
+            speedUp: function(){
+                this.speed ++;
+            },
+            stop: function(){
+                this.speed = 0;
+            }
+        };
+
+        // 2B - new ES6 way
+        let car2 = {
+            speed: 0,
+            speedUp(){
+                this.speed ++;
+            },
+            stop(){
+                this.speed = 0;
+            }
+        };
+ 
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Events 5");
+
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Functions 6");
+
+    </script>
+    <p>I am a paragraph</p>
+    <div>I am a division</div>
+
+<!--<h2><b>Hello-1</b></h2>
+    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <br>
+    <h3><em>Notes</em></h3>
+    <ul>
+        <li>document.getElementsByTagName() or document.getElementsById() is less powerful and less flexible than the document.querySelector() and document.querySelectorAll() methods.</li>
+        <li>document.querySelectorAll() returns an empty array when it cannot find any matching elements.</li>
+        <li>document.querySelector() returns a null when it cannot find a matching element.</li>
+    </ul>
+    <h3><em>Review Questions</em></h3>
+    <ol>
+        <li>Give 2 advantages to using <i>event listeners</i> instead of <i>event handlers</i>.</li>
+        <li>Give a situation where you might use an <i>event handler</i> anyway.</li>
+        <li>What does an event handler (or event listener) "point" at?</li>
+        <li>What are the two advantages of using arrow functions?</li>
+</ol>
+    <h3><em>Resources</em></h3>
+    <ul>
+        <li>
+            <p>IGME-230 Web App 3 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-3.md">Web Apps 3</a>
+            </p>
+        </li>
+        <li>
+            <p>innerElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element">innerElement</a>
+            </p>
+        </li>
+        <li>
+            <p>HTMLElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+            </p>
+        </li>
+        <li>
+            <p>Type Selectors - <a href="https://www.w3.org/TR/selectors-3/#type-selectors">CSS Type Selectors</a></p>
+        </li>
+    </ul>-->
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web-Apps-8: Arrays</title>
+    <style>
+        body{border:1px solid gray;}
+        p{font-size:2em;}
+        div{font-size:2em;font-weight:bold;}
+    </style>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        console.log("Arrays 1");
+        // empty arrays
+        let emptyArray11 = []; 			// array literal syntax
+        let emptyArray21 = new Array(); 		// this second method is not commonly used
+
+        // an array of strings
+        let colors1 = ["red","green","blue"];
+        console.log(`colors1.length = ${colors1.length}`); // 3
+
+        // an array of numbers
+        let numbers1 = [7.9, 5.9, 100.3];
+
+        // mixed types in the same Array
+        let collection1 = ["Jaberwocky", 42, 98.6, false, Date(), Math.sin, null];
+
+        //------------------------------------------------------------------------------------------------------------------------
+        console.log("Arrays 2");
+        var board = [ 
+            ['R','N','B','Q','K','B','N','R'],
+            ['P','P','P','P','P','P','P','P'],
+            [' ',' ',' ',' ',' ',' ',' ',' '],
+            [' ',' ',' ',' ',' ',' ',' ',' '],
+            [' ',' ',' ',' ',' ',' ',' ',' '],
+            [' ',' ',' ',' ',' ',' ',' ',' '],
+            ['p','p','p','p','p','p','p','p'],
+            ['r','n','b','q','k','b','n','r'] ];
+        // Move King's Pawn forward 2
+        board[4][4] = board[6][4];
+        board[6][4] = ' ';
+
+        //----------------------------------------------------------------------------------------------------------------
+        console.log("Arrays 3");
+        // Removing and adding items into an array. Removing and adding items into an array using the index.
+
+        let first = colors1[0]; // "red"
+        let last = colors1[colors1.length - 1]; // "blue"
+        
+        // Add to the end of an Array
+        colors1.push("purple");
+
+        last = colors1.pop();       // remove "purple" from the end
+
+        first = colors1.shift();    // remove "red" from beginning
+
+        colors1.unshift("red");     // add "red" back to the front
+
+        let pos = colors.indexOf("green");
+
+        // remove 1 item
+        position = 2;
+        let numberToRemove = 1;
+        let removedArray1 = colors1.splice(position, numberToRemove); // ["blue"]
+
+        // remove more than 1
+        position = 0;
+        numberToRemove = 2;
+        let removedArray2 = colors1.splice(position, numberToRemove);  // ["red","green"]
+
+        console.log(`colors1.length = ${colors1.length}`); // 0
+
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Arrays 4");
+        // Copying items into an array.
+
+        let fruits = ["apples","oranges","bananas"];
+        position = 0;
+        let numberToCopy = 2;
+        let copiedItems = fruits.slice(position,numberToCopy);
+
+        console.log(fruits); // ["apples","oranges","bananas"]
+        console.log(copiedItems); // ["apples","oranges"]
+
+        let shallowCopy = fruits.slice();
+        console.log(shallowCopy); // ["apples","oranges","bananas"]
+
+        let car = {make:"Ford"};
+        let cars = [car];
+        let carsCopy = cars.slice();
+        console.log(car == cars[0] && cars[0] == carsCopy[0]); // true, all the same car
+ 
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Arrays 5");
+        // Using loops with Arrays.
+
+        let colors = ["red","green","blue"];
+        for (let i=0; i<colors.length; i++){
+	        console.log(colors[i]);
+        }
+
+        for (let i=0; i<colors.length; i++){
+            console.log(colors[i]);
+            if (colors[i] == "red") break; // stop after "red"
+        }
+
+        for (let i=0; i<colors.length; i++){
+            if (colors[i] == "red") continue; // skip "red"
+            console.log(colors[i]);
+        }
+
+        for (let color of colors){
+            console.log(color);
+            // we can also use break and continue
+        }
+
+        colors.forEach(function(item, index, array) {
+            console.log(item, index);
+        });
+
+        let numbers = [1,2,3,4];
+        let doubleIt = function(num){return num * 2};
+        //let doubleIt = num => num * 2; // same thing as an arrow function
+        let newArray = numbers.map(doubleIt); // [2,4,6,8]
+
+        let evenOnly = function(num){return num % 2 == 0};
+        //let evenOnly = num => num % 2 == 0; // same thing as an ES6 arrow function
+        let filteredArray = numbers.filter(evenOnly); // [2,4]
+
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Arrays 6");
+        let allNodes = document.querySelectorAll("*"); // returns a NodeList object
+
+        for (let i=0;i<allNodes.length;i++){
+            console.log(allNodes[i]); // works fine
+        }
+
+        for (let node of allNodes){
+            console.log(node); // works fine
+        }
+
+        allNodes.forEach(function(item, index, array) {
+        console.log(item, index); // works fine on newer browsers
+        });
+
+        // NodeList does not have the .filter() method
+        let filteredArray = allNodes.filter(node => node.tagName == "BODY"); //FAIL!
+
+        let typedArray1 = new Uint8Array([0,33,64,128]); // 0-255 allowed
+        typedArray1[1] = 32; // allowed
+        console.log(typedArray1);  [0,32,64,128]
+
+        // looping through typed arrays is OK
+        for (num of typedArray1){
+            console.log(num); // 0 32 64 128
+        }
+
+        let typedArray2 = new Uint8Array([-10,33,64,128,256,3000]); // -10, 256 & 300 are bad values
+        console.log(typedArray2); // [246, 33, 64, 128, 0, 184] - extraneous bits were trimmed!
+
+        typedArray2.push(10); // ERROR, you can't add items to a typed array!
+
+        //-------------------------------------------------------------------------------------------------------------------
+        console.log("Arrays 7");
+        // A. Method chaining, and here it's pretty easy to read and understand
+        let highestNumber = [1,5,8,3,-10].sort().pop(); 	// 8
+        let lowestNumber = [1,5,8,3,-10].sort().shift(); 	// -10
+
+
+        // B. Method chaining, but here it's not quite as clear as to what's going on
+        // we use .trim() and .toLowerCase() to make the string comparison more flexible 
+        let nameArray = [" sUe ","  mARy  ","  bOB  "," freDdY  "];
+        let bobLowercaseAndTrimmed = nameArray.find( e=> e.trim().toLowerCase() == "bob" ).toLowerCase().trim(); // "bob"
+        let bobCapitalizedAndTrimmed = bobLowercaseAndTrimmed.charAt(0).toUpperCase() + bobLowercaseAndTrimmed.slice(1); // "Bob"
+
+
+        // C. Consider writing 2 generalized functions and encapsulate the chaining there
+        // It's more lines of code, but it's easier to understand, debug, and reuse
+        function findNameInArray(name,array){
+            return array.find(e=> e.trim().toLowerCase() == name.trim().toLowerCase())
+        }
+
+        function capitalizedWord(word){
+            // return a trimmed and capitalized version of word
+            return (word.trim().charAt(0).toUpperCase() + word.trim().toLowerCase().slice(1));
+        }
+
+        // Call these functions (which are more "bulletproof" than our earlier versions)
+        let bobCapitalizedAndTrimmed2 = capitalizedWord(findNameInArray("bob",nameArray)); // "Bob"
+        let bobCapitalizedAndTrimmed3 = capitalizedWord(findNameInArray("   bOb ",nameArray)); // "Bob"
+
+        // getting an item from a table
+        client.getItem('user-table')
+            .setHashKey('userId', 'userA')
+            .setRangeKey('column', '@')
+            .execute()
+            .then(function(data) {
+                // data.result: the resulting object
+            })
+
+
+    </script>
+    <p>I am a paragraph</p>
+    <div>I am a division</div>
+
+<!--<h2><b>Hello-1</b></h2>
+    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <br>
+    <h3><em>Notes</em></h3>
+    <ul>
+        <li>document.getElementsByTagName() or document.getElementsById() is less powerful and less flexible than the document.querySelector() and document.querySelectorAll() methods.</li>
+        <li>document.querySelectorAll() returns an empty array when it cannot find any matching elements.</li>
+        <li>document.querySelector() returns a null when it cannot find a matching element.</li>
+    </ul>
+    <h3><em>Review Questions</em></h3>
+    <ol>
+        <li>Give 2 advantages to using <i>event listeners</i> instead of <i>event handlers</i>.</li>
+        <li>Give a situation where you might use an <i>event handler</i> anyway.</li>
+        <li>What does an event handler (or event listener) "point" at?</li>
+        <li>What are the two advantages of using arrow functions?</li>
+</ol>
+    <h3><em>Resources</em></h3>
+    <ul>
+        <li>
+            <p>IGME-230 Web App 3 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-3.md">Web Apps 3</a>
+            </p>
+        </li>
+        <li>
+            <p>innerElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Element">innerElement</a>
+            </p>
+        </li>
+        <li>
+            <p>HTMLElement Properties - <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a>
+            </p>
+        </li>
+        <li>
+            <p>Type Selectors - <a href="https://www.w3.org/TR/selectors-3/#type-selectors">CSS Type Selectors</a></p>
+        </li>
+    </ul>-->
+</body>
+
+</html>

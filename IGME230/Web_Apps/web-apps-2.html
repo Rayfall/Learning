@@ -140,45 +140,67 @@
 
     </script>
 
-    <h2><b>Hello-1</b></h2>
-    <p>This page demonstrates different console applications using JavaScript. To get to the console, press F12.</p>
+    <h2><b>Introduction to JavaScript</b></h2>
+    <h3><em>Description</em></h3>
+    <p>This page further demonstrates different console applications using JavaScript. This is a continuation of Web Apps 1. To get to the console, press F12.</p>
     <br>
     <h3><em>Review Questions</em></h3>
     <ol>
-        <li>What is a <i>Web App</i>?</li>
-        <p>A web app is a client–server computer program in which the client (including the user interface and
-            client-side logic) runs in a web browser</p>
-        <li>What are the 3 major components of a web browser that can be scripted/controlled by a web developer?</li>
-        <ul>
-            <li>The Web Layout Engine.</li>
-            <li>The JavaScript Engine.</li>
-            <li>The Web Browser APIs.</li>
-        </ul>
-        <li>What languages are commonly used to "program the <b>Web Layout Engine</b>?</li>
-        <ul>
-            <li>Blink - Used by Google Chrome, Edge, and Opera.</li>
-            <li>Trident - Used by Internet Explorer.</li>
-            <li>Gecko - Used by FireFox.</li>
-            <li>WebKit - Used by Safari.</li>
-        </ul>
-        <li>How are new web browser features proposed?</li>
-        <p>Mostly done by browser vendors. Sometimes new features will be tested out before being approved. If the
-            popularity of the feature catches on, then the process will start to approve new features.</p>
-        <li>Who is in charge of web standards - the standards bodies or the browser vendors?</li>
-        <p>This is an open-ended question. An argument can be made for both as vendors can make changes and add features
-            as they see fit. The standards bodies govern what are acceptible web standards.</p>
-        <li>List 3 places a web developer can find "web app" documentation.</li>
-        <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">Web Browser APIs</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Web Storage API</a></li>
-        </ul>
+        <li>Who created the initial version of JavaScript in 1995?</li>
+        <p>Brendan Eich of Netscape Communication</p>
+        <li>What is the official name of JavaScript?</li>
+        <p>ECMAScript</p>
+        <li>Which versions of JavaScript will we be covering in this course?</li>
+        <p>ES5 / JS5</p>
+        <li>How can you get the interactive JavaScript <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> to appear in Chrome?</li>
+        <p>Through the console.</p>
+        <li>Which JavaScript keyword declares <i>variables</i>?</li>
+        <p>The <i>let</i> keyword.</p>
+        <li>Which JavaScript keyword declares "constants" (i.e. a binding to a value that can not be changed)?</li>
+        <p>The <i>const</i> keyword.</p>
+        <li>What is the name of the error that occurs when you try to change the reference to a previously declared <i>constant</i> like <b>const a=10;</b>>?</li>
+        <p>Uncaught TypeError: Assignment to constant variable (Chrome)</p>
+        <li>Find the MDN page - <a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a> - for the type of error you saw in the previous question, and give the 1-line summary of that error from the top of that MDN page.</li>
+        <p>A constant is a value that cannot be altered by the program during normal execution</p>
+        <li>What are the 5 built-in JavaScript "primitive" data types?</li>
+        <p>Number, String, Boolean, Undefined, Null</p>
+        <li>What kinds of values can a <b>Number</b> type hold? (Google it)</li>
+        <p>A Number can hold up to 64-bits of decimal, exponential, or even precise numbers.</p>
+        <li>True or False. JavaScript <i>variables</i>> DO NOT have types, but JavaScript <i>values</i>> DO have types.</li>
+        <p>True</p>
+        <li>Give an example of <i>boxing</i> in JavaScript.</li>
+        <p>Name.length in example 4 is taking a string and converting it to a number, making the output 4.</p>
+        <li>Give a line of code that will convert the string "3.14" to a <b>Number</b>.</li>
+        <p>Number("3.14")</p>
+        <li>What does <b>NaN</b> stand for?</li>
+        <p>Not a number.</p>
+        <li>Give an example of an operation that will produce a value of <b>Infinity</b>.</li>
+        <p>Anything above the numbers threshold of 64-bit.</p>
+        <li>Give an advantage of JavaScript's strict mode.</li>
+        <p>Strict mode prohibits some syntax likely to be defined in future versions of ECMAScript.</p>
+        <li>Which of the following examples will evaluate to <b>true</b> in a boolean context (ex. inside an <b>if</b> statement)? (Try them out in the browser if you are not sure) </li>
+        <ol type="i">
+            <li><b>undefined</b>, <b>null</b>, <b>false</b>, <b>0</b>, <b>""</b>, <b>''</b></li>
+            <p><i>True, True, False, False, False, False</i></p>
+            <li><b>0.0</b></li>
+            <p><i>False</i></p>
+            <li><b>"undefined"</b>, <b>"null"</b></li>
+            <p><i>True, True</i></p>
+            <li><b>"false"</b></li>
+            <p><i>False</i></p>
+            <li><b>"true"</b></li>
+            <p><i>True</i></p>
+            <li><b>new Date()</b></li>
+            <p><i>False</i></p>
+            <li><b>new Array()</b>, <b>[]</b></li>
+            <p><i>False</i></p>
+        </ol>
     </ol>
     <h3><em>Resources</em></h3>
     <ul>
         <li>
-            <p>IGME-230 Web App 1 Page - <a
-                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-1.md">Web Apps 1</a>
+            <p>IGME-230 Web App 2 Page - <a
+                    href="https://github.com/tonethar/IGME-230-Master/blob/master/notes/web-apps-1.md">Web Apps 2</a>
             </p>
         </li>
     </ul>

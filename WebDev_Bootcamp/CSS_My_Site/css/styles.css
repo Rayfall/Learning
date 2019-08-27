@@ -7,6 +7,40 @@ h1 {
     margin-top: 0px;
 }
 
-div {
+#intro {
     background-color: aquamarine;
+    /*
+    border-style: solid;
+    border-width: 10px;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    Coding Challenge of video 41
+    */
+}
+
+#blue {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    
+    /*
+    border-style: solid;
+    border-width: 10px;
+    margin-left: 31.25em;
+    Coding Challenge of video 41
+    */
+}
+
+#red {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+
+    /*
+    border-style: solid;
+    border-width: 20px;
+    margin-left: 16.25em;
+    Coding Challenge of video 41
+    */
 }

@@ -1,8 +1,11 @@
+/*-------------------Elements-------------------*/
 body {
     margin: 0;
     display: block;
     text-align: center;
     font-family: 'Gayathri', sans-serif;
+    color: #40514E;
+    line-height: 2;
 }
 
 h1 {
@@ -11,9 +14,6 @@ h1 {
     font-family: 'Open Sans Condensed', sans-serif;
     /*width: 10%;
     margin: 0 auto; Part of centering text from video 46*/
-}
-.footer-link {
-    color: #11999E;
 }
 
 h2 {
@@ -25,6 +25,30 @@ h2 {
 h3 {
     font-family: 'Montserrat', sans-serif;
     color: #11999E;
+}
+
+hr {
+    border-color: silver;
+    border-style: none none dotted;
+    border-width: 7px;
+    width: 8%;
+}
+/*-------------------Classes-------------------*/
+.top-container {
+    color: #66BFBF;
+    background-color: #E4F9F5;
+    position: relative;
+    padding-top: 100px;
+    font-size: 2.5rem;
+    height: 750px;
+    /*
+    border-style: solid;
+    border-width: 10px;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    Coding Challenge of video 41
+    */
 }
 
 .top-cloud {
@@ -42,26 +66,15 @@ h3 {
 .top-container p {
     font-weight: normal;
 }
-.top-container {
-    line-height: 2;
-    color: #66BFBF;
-    background-color: #E4F9F5;
-    position: relative;
-    padding-top: 100px;
-    font-size: 2.5rem;
-    /*
-    border-style: solid;
-    border-width: 10px;
-    padding: 20px;
-    height: 200px;
+
+.prof-picture {
+    border-radius: 50%;
     width: 200px;
-    Coding Challenge of video 41
-    */
+    height: 300px;
 }
 
-
 .middle-container {
-    
+    margin: auto;
     
     /*height: 200px;
     width: 200px;
@@ -77,9 +90,74 @@ h3 {
     */
 }
 
+.intro {
+    width: 30%;
+    margin: auto;
+}
+
+.pro {
+    text-decoration: underline;
+}
+
+.profile {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.skills {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.skill-row {
+    width: 50%;
+    margin: 100px auto;
+    text-align: left;
+}
+
+/*.skill-row p {
+    clear: left;
+}
+Instance of clear from video 55
+*/
+
+.skill-gif {
+
+    width: 30%;
+    height: 75%;
+    float: left;
+    margin-right: 30px;
+}
+
+.skill-picture {
+    width: 25%;
+    border-radius: 50%;
+    float: right;
+    margin-left: 30px;
+}
+
+.contact-me {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.btn {
+    border: 1px solid;
+    text-decoration: none;
+    background-color: #11999E;
+    color: white;
+    border-radius: 7px;
+    padding-bottom: 10px;
+    padding-top: 17px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .bottom-container {
-
-
+    background-color: #66BFBF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
     /*height: 200px;
     width: 200px;
     background-color: blue;
@@ -94,6 +172,10 @@ h3 {
     */
 }
 
-.pro {
-    text-decoration: underline;
+.footer-link {
+    color: #11999E;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
 }

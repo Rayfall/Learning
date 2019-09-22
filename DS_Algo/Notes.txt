@@ -1,0 +1,12 @@
+Interviewing Roadmap - https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview
+Resume Maker - https://www.resumemaker.online/
+	- One Page
+	- Relevent Skills
+	- Personalized
+	- Online Link
+Look into Resume Examples - https://www.cakeresume.com/resumes
+Random Resume Examples - https://thisresumedoesnotexist.com/
+Resume Checklist - https://github.com/aneagoie/resume-checklist
+Job Scan - https://www.jobscan.co/#
+ZTM Guidelines - https://github.com/zero-to-mastery/start-here-guidelines
+ZTM Job Board - https://github.com/zero-to-mastery/ZtM-Job-Board

@@ -10,3 +10,6 @@ Resume Checklist - https://github.com/aneagoie/resume-checklist
 Job Scan - https://www.jobscan.co/#
 ZTM Guidelines - https://github.com/zero-to-mastery/start-here-guidelines
 ZTM Job Board - https://github.com/zero-to-mastery/ZtM-Job-Board
+Coding Environment - https://repl.it/
+Alternative Coding Environment - https://glot.io/
+More In-depth Explanation of Big O -  https://www.quora.com/What-is-the-difference-between-big-oh-big-omega-and-big-theta-notations

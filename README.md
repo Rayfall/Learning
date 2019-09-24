@@ -13,10 +13,10 @@ This is a course taught by Andrei Neagoie on Udemy.com. This course teaches vari
 1. Introduction
 3. Big O
 4. How to Solve Coding Problems
-
-### Topics to Complete
 5.  Data Structures: Introduction
 6.  Data Structures: Arrays
+
+### Topics to Complete
 7.  Data Structures: Hash Tables
 8.  Data Structures: Linked Lists
 9.  Data Structures: Stacks and Queues

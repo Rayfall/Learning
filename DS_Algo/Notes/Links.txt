@@ -22,3 +22,5 @@ Bonus Problems:
 3. Move Zeroes - https://leetcode.com/problems/move-zeroes/description/
 4. Contains Duplicate - https://leetcode.com/problems/contains-duplicate/description/
 5. Rotate Array - https://leetcode.com/problems/rotate-array/description/
+
+Hash Generator - http://www.miraclesalad.com/webtools/md5.php

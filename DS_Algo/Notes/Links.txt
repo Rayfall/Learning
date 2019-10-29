@@ -24,3 +24,5 @@ Bonus Problems:
 5. Rotate Array - https://leetcode.com/problems/rotate-array/description/
 
 Hash Generator - http://www.miraclesalad.com/webtools/md5.php
+
+https://visualgo.net/en/list?slide=1 - Linked List practice

@@ -15,9 +15,9 @@ This is a course taught by Andrei Neagoie on Udemy.com. This course teaches vari
 4. How to Solve Coding Problems
 5.  Data Structures: Introduction
 6.  Data Structures: Arrays
+7.  Data Structures: Hash Tables
 
 ### Topics to Complete
-7.  Data Structures: Hash Tables
 8.  Data Structures: Linked Lists
 9.  Data Structures: Stacks and Queues
 10. Data Structures: Trees

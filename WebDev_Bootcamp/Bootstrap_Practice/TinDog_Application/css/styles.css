@@ -2,7 +2,6 @@ body {
     font-family: 'Montserrat-Black', sans-serif;
 }
 
-
 h1 {
     /*color:white;*/
     font-weight: bolder;
@@ -45,6 +44,36 @@ h1 {
     transform: rotate(23deg);
 }
 
+/* Features */
+#features {
+    padding: 7% 15%;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 5%;
+}
+
+h3 {
+    font-family: 'Montserrat-Black', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+p {
+    color: #8f8f8f;
+}
+
+.icon {
+    color: #ef8172;
+    margin-bottom: 1rem;
+}
+
+.icon:hover {
+    color: #ff4c68;
+}
+
+/* My Attempt
 #features h3 {
     font-family: 'Montserrat-Black', sans-serif;
     font-weight: bold;
@@ -54,6 +83,7 @@ h1 {
 #features p {
     color: #8f8f8f;
 }
+*/
 
 #title {
     background-color: #FF4C68;

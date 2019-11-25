@@ -50,6 +50,7 @@
         }
         */
 
+        /* Challenge 4 - Video 113
         var output = [];
         var i = 1;
         //output.push(1); // This will push a number to the bottom of the array.
@@ -70,7 +71,33 @@
             console.log(output);
         }
 
-        fizzBuzz();
+        fizzBuzz();*/
+
+        /* Coding Exercise 4: Fibonacci Challenge
+        function fibonacciGenerator (n) {
+            //TODO
+            var numbers = [];
+
+            for(var i = 0; i < n; i++) {
+                
+                if(i === 0 || i === 1) {
+                    numbers.push(i);
+                }
+                else if( (i + 1) > n){
+                    break;
+                }
+                else{
+                    numbers.push(numbers[i-1] + numbers[i-2]);
+                }
+                
+            }      
+            return numbers;
+            //Return an array of fibonacci numbers.
+        }
+
+        fibonacciGenerator(5);
+        */
+
     </script>
 </body>
 </html>

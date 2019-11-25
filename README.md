@@ -20,9 +20,9 @@ This is a course taught by Angela Yu on Udemy.com. This course teaches various t
 6. Introduction to Bootstrap 4
 7.  Intermediate Bootstrap
 8.  Introduction to JavaScript ES6
+9.  Intermediate JavaScript
 
 ### Topics to Complete
-9.  Intermediate JavaScript
 10. The Document Object Model (DOM)
 11. Boss Level Challenge 1 - The Dicee Game
 12. Advanced JavaScript and DOM Manipulation

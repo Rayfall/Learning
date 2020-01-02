@@ -3,6 +3,12 @@ alert("Hello");
 //Challenge from video 119
 var name = document.querySelector("ul li:nth-of-type(3)").innerHTML = "Andrew";
 
+//Challenge from video 122
+var button = document.querySelector("button").style.backgroundColor = "yellow";
+
+//Challenge from video 123
+var bigHeader = document.querySelector("h1").classList.add("huge");
+
 //var heading = document.firstElementChild.lastElemenetChild.firstElementChild;
 //heading.innerHTML = "Good Bye";
 //heading.style.color = "red";
@@ -20,4 +26,7 @@ innerHTML, style, firstChild
 
 Methods:
 click(), appendChild(), setAttribute()
+
+Classlist:
+document.querySelector("button").classList.add,remove,toggle("invisible");
 */

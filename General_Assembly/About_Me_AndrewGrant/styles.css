@@ -1,0 +1,80 @@
+body {
+    color: rgb(255,255,255);
+    background-image: url("media/background_image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div {
+    background-color: rgba(0,0,0,.7);
+    margin: 3em;
+    padding: 50px;
+}
+
+h1 {
+    color: #C0C0C0;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Sriracha', cursive;
+}
+
+h2 {
+    color: #C0C0C0;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Sriracha', cursive;
+}
+
+img {
+    border-radius: 30%;
+    width: 250px;
+    height: 300px;
+    float: left;
+}
+
+li {
+    list-style-type: none;
+}
+
+section {
+    padding: 30px;
+}
+
+.about-me {
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.about-me a {
+    color: rgb(0,0,255);
+    text-decoration: none;
+}
+
+.contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact a {
+    color: rgb(255,255,255);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    color: rgb(75, 75, 235);
+}
+
+.hobbies {
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.intro {
+    padding: 50px;
+}

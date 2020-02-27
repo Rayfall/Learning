@@ -1,0 +1,183 @@
+/* ################################################## */
+/* ########### Global classes / overrides ########### */
+/* ################################################## */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 15px 0;
+  }
+  
+  /* Fonts, classes are so I can reuse the styles on a variety of elements */
+  .merriweather { font-family: 'Merriweather', serif; }
+  .oswald { font-family: 'Oswald', sans-serif; }
+  .lato { font-family: 'Lato', sans-serif; }
+  
+  /* Colors */
+  /* Dark yellow: #f2ff00 */
+  /* Lighter yellow: #ffd900 */
+  /* Light gray: #adadad */
+  /* Medium gray: #878787 */
+  
+  /* Background Image */
+  /* https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/coworking.jpg */
+
+
+  
+  body {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2522641/coworking.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  button {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5%;
+    border-style: none;
+    box-shadow: 0px 2px rgba(0,0,0,0.3);
+  }
+
+/*-----------Header Section-------------------------------*/
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    background-color: black;
+    border-bottom: 5px solid yellow;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 0px;
+    font-family: sans-serif;  
+    font-size: 17px;
+    padding-left: 13px;
+  }
+  
+  a:nth-child(1) {
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding-left: 0px;
+  }
+  
+  a:nth-child(2) {
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+  
+  h1 {
+    color: yellow;
+    padding: 25px 50px 25px 0px;
+    font-weight: bold;
+    font-size: 34px;
+  }
+
+/*-----------Brains Section------------------------------*/
+.brains {
+  background-color: #BABABA;
+}
+
+.brains p {
+  text-align: center;
+  font-style: italic;
+  font-size: 25px;
+}
+
+.strike {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: yellow;
+  text-decoration-thickness: 3px;
+}
+
+/*-----------Article Section------------------------------*/
+.match {
+  margin-top: 79.5px;
+  margin-bottom: 79.5px;
+  margin-left: auto;
+  margin-right: 50px;
+  background-color: #F7F7F7;
+  opacity: 0.85;
+  width: 500px;
+  height: 300px;
+  border: 3px solid gray;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  font-family: sans-serif;
+  padding-left: 65px;
+  
+}
+
+.match button {
+  background-color: yellow;
+  width: 90%;
+  height: 50px;
+}
+
+.match h2 {
+  margin-top: 30px;
+}
+
+/*-----------Cards Section------------------------------*/
+.cards {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 300px;
+}
+
+.cards div {
+  margin: 20px;
+}
+
+.cards p {
+  font-size: 15px;
+}
+
+.cards button {
+  background-color: lightgray;
+  height: 40px;
+}
+
+hr {
+  transform: rotate(90deg);
+  width: 200px;
+  opacity: 0.1;
+}
+
+/*-----------Footer Section-------------------------------*/
+  footer {
+    background-color: black;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  footer p {
+    color: white;
+    font-size: 10px;
+    margin-left: 20px;
+  }

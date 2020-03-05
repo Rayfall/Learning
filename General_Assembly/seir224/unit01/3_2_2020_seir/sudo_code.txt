@@ -1,0 +1,80 @@
+=============================
+Challenge 1
+Given a string, write the pseudocode function to check if it is palindrome or not. A string is said to be palindrome if reverse of the string is same as string. For example, “radar” is palindrome, but “radix” is not palindrome.
+=============================
+SET string equal to " "
+SET temporaryString equal to " "
+
+OUTPUT "Please enter a palindrome string"
+INPUT string
+
+FOR each character up to the string length
+    MOVE last character subtracted by the iteration count in string to temporaryString
+ENDFOR
+
+IF string and temporaryString are the same string
+    PRINT "This string is a palindrome"
+ELSE
+    PRINT "This string is not a palindrome"
+ENDIF
+
+=============================
+Challenge 2
+Using the pseudocode, have the function VowelCount(str) take the str string parameter being passed and return the number of vowels the string contains (ie. "All cows eat grass" would return 5).
+=============================
+
+FUNCTION VowelCount(str) 
+    SET phraseArray the length of the str
+    SET count equal to zero
+
+    FOR each character, starting at zero, in the length of the str
+        SET each phraseArray space to the corresponding character in str
+    ENDFOR
+
+    FOR each space, starting at zero, in the length of phraseArray
+        IF phraseArray equals an a, e, i, o, or u
+            add +1 to count
+        ELSE
+            continue
+        ENDIF
+    ENDFOR
+
+    return count
+
+
+// ACTIVITY// create an array called readingList
+// create 3 objects of books that are part of your reading list
+//  - they can be books you've read 
+//  - they can be books you want to read
+// the objects must have the following properties:
+//  - title - string
+//  - author - string
+//  - isRead - boolean (true/false)
+//  - numOfPages - number
+// place all three objects into the readingList array
+// console.log the readingList
+
+let book1 = {
+    title: "Fahreinheit 451",
+    author: "Ray Bradbury",
+    isRead: true,
+    numOfPages: 256
+}
+
+let book2 = [
+    title: "Peace Like a River",
+    author: Leif Enger,
+    isRead: true,
+    numOfPages: 320
+]
+
+let book3 = [
+    title: ,
+    author: ,
+    isRead: ,
+    numOfPages: 
+]
+
+let readingList = [ book1{
+    title: Fahreinheit 451
+}]

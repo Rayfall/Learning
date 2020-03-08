@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome | Portfolio</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="css/main.css" type="text/css" rel="stylesheet">
+  <link href="css/nav.css" type="text/css" rel="stylesheet">
+  <link href="css/progress.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Icon Bar (Sidebar - hidden on small screens) -->
+  <div class="sideNav">
+    <!-- Avatar image in top left corner -->
+    <img src="images/me_copy.jpg" class="myPhoto" alt="me">
+    <a href="#">
+      <i class="fa fa-home w3-xxlarge"></i>
+      <p>HOME</p>
+    </a>
+
+    <a href="#about">
+      <i class="fa fa-user w3-xxlarge"></i>
+      <p>ABOUT</p>
+    </a>
+
+    <a href="#projects">
+      <i class="fa fa-eye w3-xxlarge"></i>
+      <p>PROJECTS</p>
+    </a>
+
+    <a href="#contact">
+      <i class="fa fa-envelope w3-xxlarge"></i>
+      <p>CONTACT</p>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens (Hidden on medium and large screens) -->
+  <div class="topNav">
+    <div>
+      <a href="#">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+    <button class="navButton"><i class="fa fa-angle-double-left"></i></button>
+  </div>
+
+  <!-- Page Content -->
+  <div id="main">
+    <!-- Header/Home -->
+    <header id="home">
+      <h1><span class="hide">I'm</span> Andrew T. Grant</h1>
+      <p id="tagline">Engineer. Designer. Developer.</p>
+      <div>
+        <img id="logo" src="images/LogoMakr_9ZnNbV.png" alt="logo">
+      </div>
+      
+    </header>
+
+    <!-- About Section -->
+    <div id="about">
+      <h2>About Me</h2>
+      <hr>
+      <p id="information">
+        Inspired by my love of video games, I started my journey to becoming a successful engineer in 2010.
+        I am originally from New Haven, Connecticut but am currently residing in Rochester, New York to finish my
+        Bachelor's in Computer Engineering Technology. I have a strong passion for programming and development.
+        In my spare time, I enjoy messing around with electronics, playing video games, and drawing.
+      </p>
+
+      <h3 class="skills">Software Skills</h3>
+
+      <p class="itemName">C/C++</p>
+      <div class="progress1 progress-moved">
+        <div class="progress-bar1"></div>
+      </div>
+
+      <p class="itemName">C#</p>
+      <div class="progress4 progress-moved">
+        <div class="progress-bar4"></div>
+      </div>
+      <p class="itemName">HTML/CSS</p>
+      <div class="progress4 progress-moved">
+        <div class="progress-bar4"></div>
+      </div>
+      <p class="itemName">JavaScript</p>
+      <div class="progress2 progress-moved">
+        <div class="progress-bar2"></div>
+      </div>
+
+      <h3 class="skills">Hardware Skills</h3>
+
+      <p class="itemName">Assembly</p>
+      <div class="progress3 progress-moved">
+        <div class="progress-bar3"></div>
+      </div>
+
+      <p class="itemName">VHDL/Verilog</p>
+      <div class="progress1 progress-moved">
+        <div class="progress-bar1"></div>
+      </div>
+      <p class="itemName">FPGA Programming</p>
+      <div class="progress4 progress-moved">
+        <div class="progress-bar4"></div>
+      </div>
+      <p class="itemName">Raspberry Pi</p>
+      <div class="progress2 progress-moved">
+        <div class="progress-bar2"></div>
+      </div>
+      <p class="itemName">Arduino</p>
+      <div class="progress1 progress-moved">
+        <div class="progress-bar1"></div>
+      </div>
+
+      <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">30+</span><br>
+          Classes Taken
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">55+</span><br>
+          Projects Done
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">10+</span><br>
+          Happy Teachers
+        </div>
+        <div class="w3-quarter w3-section">
+          <span class="w3-xlarge">1500+</span><br>
+          Hours Spent
+        </div>
+      </div>
+
+      <a href="resume/Grant_Andrew_CET2019.pdf" class="downloadButton" download>
+        <i class="fa fa-download"></i> Download Resume
+      </a>
+
+      <a href="resume/Grant_Andrew_CET2019.pdf" class="printButton" target="_blank">
+        <i class="fa fa-download"></i> Print Resume
+      </a>
+
+      <!-- Project Section -->
+      <div id="projects">
+        <h2>My Projects</h2>
+        <hr>
+
+        <!-- Grid for photos -->
+        <div class="imgContainer">
+          <div>
+            <div class="textImage">
+                <img src="images/drone.jpg" alt="dev" class="projectPhoto">
+                <div class="textStyle">Test Text</div>
+            </div>
+            <div class="textImage">
+                <img src="images/pro1_main.JPG" alt="dev2" class="projectPhoto">
+                <div class="textStyle">Test Text</div>
+            </div>
+            <div class="textImage">
+                <img src="images/rover1.jpg" alt="dev3" class="projectPhoto">
+                <div class="textStyle">Test Text</div>
+            </div>
+            <!--<div class="textImage">
+                <img src="images/proto_rover1.jpg" alt="dev4" class="projectPhoto">
+                <div class="textStyle">Test Text</div>
+            </div>-->
+          </div>
+          <!-- End photo grid -->
+        </div>
+        <!-- End Project Section -->
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact">
+        <h2>Contact Me</h2>
+        <hr>
+
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Rochester, US</p>
+          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +1 203 909 8163</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: atg4691@rit.edu</p>
+        </div><br>
+        <p>If you would like to know more about me, please feel free to send me a message using this form:</p>
+
+        <form action="php/action_page.php" method="POST" target="_blank">
+          <p><input type="text" placeholder="Name" required name="name"></p>
+          <p><input type="text" placeholder="Email" required name="email"></p>
+          <p><input type="text" placeholder="Subject" required name="subject"></p>
+          <p><input type="text" placeholder="Message" required name="message"></p>
+          <p>
+            <button class="submitButton" type="submit">
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+          </p>
+        </form>
+        <!-- End Contact Section -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+        <a href="https://www.facebook.com/Aetherfall" class="button">
+          <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+        <a href="https://www.instagram.com/Aetherfall/" class="button">
+          <i class="fa fa-instagram w3-hover-opacity"></i></a>
+        <a href="https://github.com/Rayfall" class="button">
+          <i class="fa fa-github w3-hover-opacity"></i></a>
+        <a href="https://www.linkedin.com/in/andrew-grant-96aa7b8a/" class="button">
+          <i class="fa fa-linkedin w3-hover-opacity"></i></a>
+        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+        <p>
+          Created my free logo at LogoMakr.com
+        </p>
+        <!-- End footer -->
+      </footer>
+
+      <!-- END PAGE CONTENT -->
+    </div>
+  </div>
+
+</body>
+
+</html>

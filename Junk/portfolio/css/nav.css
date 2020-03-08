@@ -1,0 +1,79 @@
+.sideNav {
+    width: 120px;    
+    background: rgb(138, 137, 137);
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    text-align: center;
+}
+
+.sideNav a {
+    text-decoration: none;
+    text-emphasis: none;
+  }
+
+.sideNav a:hover {
+    color: lightblue;    
+}
+
+.sideNav a:hover p {
+    color: lightblue;
+}
+
+.sideNav a:link {
+    color: rgb(85, 85, 85);
+}
+
+.topNav {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 560px) {
+    .navButton {
+        position: relative;
+        float: right;
+        border: none;
+        width: 50px;
+    }
+
+    .topNav {
+        display: flex;
+        visibility: visible;
+        position: fixed;
+        background: rgb(138, 137, 137);
+        width: 100%;
+        z-index: 1;
+        top: 0;
+        opacity: 0.7;
+        justify-content: center;
+    }
+
+    .topNav:hover {
+        opacity: 1;
+    }
+
+    .topNav a {
+        text-decoration: none;
+        text-emphasis: none;
+        width: 100px;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+    }
+
+    .topNav div {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .topNav a:hover {
+        color: lightblue;
+    }
+
+    .sideNav {
+        visibility: hidden;
+    }
+}

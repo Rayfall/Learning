@@ -9,6 +9,7 @@ let items = [];
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 
 app.get("/", function(req, res){
     let options = {weekday:'long',day:'numeric',month:'long'};    

@@ -11,7 +11,7 @@ const _ = require("lodash");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const mongoURL = "mongodb://localhost:27017/todolistDB"
+const mongoURL = "mongodb+srv://admin-andrew:testpassword@test-cluster-0-ayhzg.mongodb.net/todolistDB"
 //--------------------------------------------------------
 
 const app = express();
@@ -165,6 +165,11 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+let port = process.env.PORT;
+if(port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function() {
+  console.log("Server started successfully");
 });

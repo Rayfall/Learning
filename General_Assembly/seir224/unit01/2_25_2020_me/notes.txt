@@ -1,5 +1,0 @@
-This repo was created to learn about Git and creating repos. Currently, there are two folders in here, my_first_repo and my_second_repo, but they are pulling in from my Enterprise account.
-
-To push to those particular repos, use the command: 
-
-git push (specific git repo) master

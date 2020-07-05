@@ -3,12 +3,29 @@
 
 void UBullCowCartridge::BeginPlay() // When the game starts
 {
-    Super::BeginPlay();
-    PrintLine("Welcome to Bull & Cows!\nTry testing the terminal by typing something and pressing the 'Enter' key!");
+    Super::BeginPlay();    
+    
+    PrintLine(TEXT("Welcome to Bull & Cows!\nTry guessing the 4 Letter word!"));
+    PrintLine(TEXT("You have 5 to start off with. Every wrong guess will subtract the number of guesses."));
+
+    InitGame();
 }
 
 void UBullCowCartridge::OnInput(const FString& Input) // When the player hits enter
 {
     ClearScreen();
-    FString HiddenWord = "inhaler";
+
+    if(HiddenWord == Input){
+        PrintLine(TEXT("Correct!"));
+    }else{
+        PrintLine(TEXT("Try Again."));
+        PlayerGuesses = PlayerGuesses - 1;
+    }
+}
+
+void UBullCowCartridge::InitGame()
+{
+    HiddenWord = TEXT("boil");
+    PlayerGuesses = 5;
+
 }

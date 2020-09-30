@@ -21,6 +21,8 @@ public:
 	void FindPhysicsHandle();
 	void InputSetup();
 	FHitResult GetFirstPhysicsBodyInReach() const;
+	FVector GetPlayerReach() const;
+	FVector GetPlayerWorldPosition() const;
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -31,6 +33,10 @@ protected:
 
 private:
 	float Reach = 100.f;
+
+	UPROPERTY()
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+
+	UPROPERTY()
 	UInputComponent* InputComponent = nullptr;
 };

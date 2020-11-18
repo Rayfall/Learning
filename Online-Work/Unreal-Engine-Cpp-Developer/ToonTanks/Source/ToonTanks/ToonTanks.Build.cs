@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Fill out your copyright notice in the Description page of Project Settings.
 
 using UnrealBuildTool;
@@ -21,3 +22,28 @@ public class ToonTanks : ModuleRules
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
 	}
 }
+=======
+// Fill out your copyright notice in the Description page of Project Settings.
+
+using UnrealBuildTool;
+
+public class ToonTanks : ModuleRules
+{
+	public ToonTanks(ReadOnlyTargetRules Target) : base(Target)
+	{
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+	
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+
+		PrivateDependencyModuleNames.AddRange(new string[] {  });
+
+		// Uncomment if you are using Slate UI
+		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
+		
+		// Uncomment if you are using online features
+		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
+
+		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
+	}
+}
+>>>>>>> 3af449b29ba5c834e3c9e7dd25738669ad595e8b

@@ -23,8 +23,6 @@ class TOONTANKS_API APawnTurret : public APawnBase
 		FTimerHandle FireRateTimerHandle;
 
 	public:
-		APawnTurret();
-
 		// Called every frame
 		virtual void Tick(float DeltaTime) override;
 

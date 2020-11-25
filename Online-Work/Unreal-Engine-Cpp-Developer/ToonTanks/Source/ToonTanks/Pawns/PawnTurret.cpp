@@ -9,8 +9,7 @@ void APawnTurret::BeginPlay()
 {
 	Super::BeginPlay();
 	
-    GetWorld()->GetTimerManager().SetTimer(FireRateTimer, this, &APawnTurret::CheckFireCondition); // GetWorldTimerManager(); // Does the Same thing
-
+    GetWorld()->GetTimerManager().SetTimer(FireRateTimerHandle, this, &APawnTurret::CheckFireCondition, FireRate, true); // GetWorldTimerManager(); // Does the Same thing
 }
 
 // Called every frame
@@ -21,5 +20,9 @@ void APawnTurret::Tick(float DeltaTime)
 
 void APawnTurret::CheckFireCondition()
 {
+	// If Player == null || is Dead THEN BAIL!!!
 
+	// If Player IS in range THEN FIRE!!!
+
+	UE_LOG(LogTemp, Warning, TEXT("Fire Condition Checked"));
 }

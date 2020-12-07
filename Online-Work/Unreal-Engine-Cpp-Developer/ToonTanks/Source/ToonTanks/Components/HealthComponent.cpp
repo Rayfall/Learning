@@ -22,13 +22,13 @@ void UHealthComponent::BeginPlay()
 	Super::BeginPlay();
 
 	Health = DefaultHealth;
-	GameModeRef = Cast<ATankGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+	GameModeRef = Cast<ATankGameModeBass>(UGameplayStatics::GetGameMode(GetWorld()));
 	GetOwner()->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::TakeDamage);
 }
 
 void UHealthComponent::TakeDamage(AActor* DamageActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser)
 {
-	if(Dammage == 0){
+	if(Damage == 0 || Health <= 0){
 		return;
 	}
 

@@ -21,6 +21,8 @@ class TOONTANKS_API APawnTank : public APawnBase
 		UCameraComponent* Camera;
 
 		APlayerController* PlayerController;
+
+		bool bIsPlayerAlive = true;
 		
 		FVector MoveDirection;
 		FQuat RotationDirection;
@@ -45,6 +47,8 @@ class TOONTANKS_API APawnTank : public APawnBase
 		virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 		virtual void HandleDestruction() override;
+
+		bool GetIsPlayerAlive();
 		
 	protected:
 		// Called when the game starts or when spawned

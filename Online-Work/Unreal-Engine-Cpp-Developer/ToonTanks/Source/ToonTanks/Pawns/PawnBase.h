@@ -8,6 +8,7 @@
 
 class UCapsuleComponent;
 class AProjectileBase;
+class UHealthComponent;
 
 UCLASS()
 class TOONTANKS_API APawnBase : public APawn
@@ -28,6 +29,12 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Projectile Type", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
 
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	UParticleSystem* DeathParticle;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))	
+	UHealthComponent* HealthComponent;
+
 public:
 	// Sets default values for this pawn's properties
 	APawnBase();
@@ -36,6 +43,7 @@ public:
 	virtual void HandleDestruction();
 
 protected:
+
 	void RotateTurret(FVector LookAtTarget);
 	void Fire();
 	

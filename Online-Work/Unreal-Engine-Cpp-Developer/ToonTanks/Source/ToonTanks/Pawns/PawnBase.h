@@ -35,6 +35,9 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))	
 	UHealthComponent* HealthComponent;
 
+	UPROPERTY(EditAnywhere, Category = "Effects")	
+	USoundBase* DeathSound;
+
 public:
 	// Sets default values for this pawn's properties
 	APawnBase();

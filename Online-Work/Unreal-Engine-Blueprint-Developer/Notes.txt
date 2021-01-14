@@ -1,0 +1,5 @@
+https://www.unrealengine.com/en-US/onlinelearning-courses/converting-blueprints-to-c
+
+https://defkey.com/unreal-engine-shortcuts
+
+https://github.com/UnrealEngineHTML5/Documentation
